@@ -1,3 +1,4 @@
+from decimal import Decimal
 from django.db import models
 
 import random
@@ -30,8 +31,15 @@ class Position(models.Model):
         """Calculate unrealized PnL based on market price and entry price."""
         mark_price = self.mark_price
         if self.position_type == 'long':
+            print("(mark_price - self.entry_price) * self.initial_quantity")
+            print((mark_price))
+            print((self.entry_price))
+            print((self.initial_quantity))
+            print((mark_price - self.entry_price) * self.initial_quantity)
             return (mark_price - self.entry_price) * self.initial_quantity
         else:
+            print("(mark_price - self.entry_price) * self.initial_quantity")
+            print((mark_price - self.entry_price) * self.initial_quantity)
             return (self.entry_price - mark_price) * self.initial_quantity
 
     @property
@@ -58,7 +66,8 @@ class Position(models.Model):
         url = f'https://fapi.binance.com/fapi/v1/premiumIndex?symbol={self.symbol.upper()}'
         response = requests.get(url)
         data = response.json()
-        return float(data['markPrice'])
+        return Decimal(data['markPrice'])
+
 
     @property
     def liq_price(self):
@@ -78,6 +87,8 @@ class Portfolio(models.Model):
     def calculate_unrealized_pnl(self):
         positions = Position.objects.all()  # Get all positions to calculate the unrealized PNL
         total_unrealized_pnl = sum([position.unrealized_pnl for position in positions])
+        print("total_unrealized_pnl")
+        print(total_unrealized_pnl)
         return total_unrealized_pnl
 
     def calculate_margin_balance(self):
