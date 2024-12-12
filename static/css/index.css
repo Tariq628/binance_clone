@@ -1,0 +1,541 @@
+@import url(https://db.onlinewebfonts.com/c/d05c19ccecf7003d248c60ffd6b5e8f7?family=Binance+PLEX);
+
+:root {
+  @media screen and (max-width: 500px) {
+    font-size: 12px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #222336;
+  color: #fff;
+  font-family: Binance Plex, Arial, sans-serif !important;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--__gap, 1rem);
+}
+
+.icon {
+  color: #737373;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.green {
+  color: #00d395;
+}
+
+.red {
+  color: #ff4d4f;
+}
+
+.app {
+  width: 100%;
+  height: 100vh;
+  max-width: 650px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.header {
+  padding: 1rem;
+  text-align: center;
+  .tabs {
+    display: inline-flex; 
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.125rem;
+
+    background-color: #2a2b3d;
+    border-radius: 0.5rem;
+    padding: 0.125rem;
+    width: 50%;
+
+    margin-bottom: 1rem;
+
+    .tab-item {
+      color: #737373;
+      border-radius: 0.5rem;
+      flex-grow: 1;
+      padding: 0.5rem 1rem;
+      background-color: transparent;
+
+      cursor: pointer;
+      border: 0;
+      outline: 0;
+
+      &[aria-selected='true'] {
+        color: #fff;
+        background-color: #222336;
+      }
+    }
+  }
+
+  .scrollable-tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.125rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #374151;
+    overflow-x: scroll;
+
+    scrollbar-width: 0;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    touch-action: pan-x;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    .tab-item {
+      color: #fff;
+      opacity: 0.7;
+      border-radius: 0.5rem;
+      white-space: nowrap;
+      padding: 0.5rem 1rem;
+      background-color: transparent;
+      cursor: pointer;
+      border: 0;
+      outline: 0;
+
+      &[aria-selected='true'] {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.footer {
+  
+  .icon-image {
+    width: 30px;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.125rem;
+    border-top: 1px solid #374151;
+
+    padding: 0.125rem;
+
+    .tab-item {
+      color: #737373;
+      border-radius: 0.5rem;
+      flex-grow: 1;
+      padding: 0.5rem 1rem;
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      cursor: pointer;
+      border: 0;
+      outline: 0;
+
+      svg.icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        fill: currentColor;
+        stroke: currentColor;
+      }
+
+      &[aria-selected='true'] {
+        color: #fff;
+        background-color: #222336;
+
+        svg.icon {
+          fill: #fff;
+          stroke: #fff;
+        }
+      }
+    }
+  }
+}
+
+/* MAIN */
+.main {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+
+  scrollbar-width: 0;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .coins-tab {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .tab-item {
+      border: 0;
+      outline: 0;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1.25rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      line-height: 1.5rem;
+
+      background-color: transparent;
+      cursor: pointer;
+      color: #abaaaa;
+      opacity: 0.8;
+
+      &[aria-selected='true'] {
+        box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+        background-color: #374151;
+        color: #d6d6d6;
+        opacity: 1;
+      }
+    }
+  }
+
+  .title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: 0.5rem 0;
+
+    .title {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #abaaaa;
+      /* border-bottom: #abaaaa 1px dashed; */
+    }
+
+    .icons {
+      .icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        flex-shrink: 0;
+      }
+      .icon-image {
+        width: 24px;
+        color: #000;
+      }
+    }
+  }
+
+  /* Balance */
+
+  .balance-wrapper {
+    margin-top: 1rem;
+
+    .current-balance-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      .current-balance {
+        font-size: 2rem;
+        line-height: 1;
+        font-weight: 700;
+      }
+
+      .currency-select {
+        background-color: transparent;
+        color: #fff;
+        font-size: 12px;
+        border: 0;
+        outline: 0;
+        width: fit-content;
+
+        option {
+          color: #000;
+        }
+      }
+    }
+
+    .approximate-balance {
+      font-size: 1rem;
+
+      color: #737373;
+      margin-top: 1rem;
+    }
+
+    .pnl {
+      margin-top: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .pnl-label {
+        color: #fff;
+      }
+
+      .pnl-value {
+        color: #4ade80;
+      }
+    }
+
+    .wallets {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+
+      .wallet {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 0.5rem;
+        color: #737373;
+
+        .wallet-name,
+        .wallet-balance {
+          font-size: 12px;
+          font-weight: 500;
+        }
+
+        .wallet-balance {
+          font-size: 1rem;
+          color: #fff;
+        }
+      }
+    }
+
+    .buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+
+      .button {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 3rem;
+        padding: 0.75rem 1.5rem;
+        background-color: #374151;
+        color: #fff;
+        border: 0;
+        outline: 0;
+        border-radius: 0.5rem;
+        font-size: 12px;
+        cursor: pointer;
+        transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+
+        &:hover,
+        &:focus-visible {
+          background-color: #ffc107;
+          color: #000;
+        }
+      }
+    }
+  }
+
+  /* Toggle */
+  .toggle-container {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-radius: 10px;
+
+    border: 1px solid #3c3c4e;
+
+    .toggle-label {
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .toggle-switch {
+      --_width: 60px;
+
+      position: relative;
+      width: var(--_width);
+      height: 24px;
+      background-color: #fcd535;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .toggle-switch input {
+      appearance: none;
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      width: calc(var(--_width) / 2);
+      height: 24px;
+      background-color: #ffffff;
+      border-radius: 0.25rem;
+      transition: transform 0.3s;
+      pointer-events: none;
+    }
+
+    .toggle-switch input:checked + .toggle-slider {
+      transform: translateX(calc(var(--_width) / 2));
+    }
+  }
+
+  .unknown-tabs {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #222336; /* Solid background to prevent transparency while scrolling */
+    border-bottom: 1px solid #374151; /* Optional: you can add a border to separate it visually */
+
+    .tab-item {
+      --_underline-color: transparent;
+      border: 0;
+      outline: 0;
+
+      padding: 0.75rem 1.25rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      line-height: 1.5rem;
+
+      background-color: transparent;
+      cursor: pointer;
+      color: #fff;
+      opacity: 0.7;
+
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0.5rem;
+        width: 20%;
+        height: 2px;
+        background-color: var(--_underline-color);
+        transition: transform 0.3s;
+      }
+
+      &[aria-selected='true'] {
+        opacity: 1;
+        --_underline-color: #ffc107;
+      }
+    }
+  }
+
+  .binance-cards {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .binance-card {
+      border-bottom: 1px solid #374151;
+      padding-bottom: 1rem;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .binance-card-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+
+        .pair {
+          font-size: 15px;
+          font-weight: bold;
+        }
+
+        .type,
+        .leverage {
+          background-color: #434358;
+          border-radius: 0.125rem;
+          padding: 0.25rem 0.5rem;
+          font-size: 12px;
+          opacity: 0.9;
+          cursor: pointer;
+        }
+
+        .share-icon {
+          margin-left: auto;
+        }
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+
+      .cell-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+
+        .label {
+          font-size: 14px;
+          color: #fff;
+          opacity: 0.8;
+        }
+
+        .value {
+          font-size: 1rem;
+          font-weight: bold;
+        }
+      }
+
+      .grid-2 .cell-item:nth-child(2n) {
+        align-items: end;
+        text-align: end;
+      }
+
+      .grid-3 .cell-item:nth-child(3n) {
+        align-items: end;
+        text-align: end;
+      }
+
+      .icon-image {
+        width: 16px;
+      }
+    }
+  }
+}

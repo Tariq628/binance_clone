@@ -1,0 +1,448 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" href="{% static "css/index.css" %}" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="tabs" id="tabs-menu-tab">
+          <button class="tab-item" aria-selected="true">Exchange</button>
+          <button class="tab-item" aria-selected="false">Web3</button>
+        </div>
+
+        <div class="scrollable-tabs" id="scrollable-tabs">
+          <button class="tab-item" aria-selected="true">Trading</button>
+          <button class="tab-item" aria-selected="false">Swap</button>
+          <button class="tab-item" aria-selected="false">Transfer</button>
+          <button class="tab-item" aria-selected="false">Margin</button>
+          <button class="tab-item" aria-selected="false">Positions</button>
+          <button class="tab-item" aria-selected="false">Assets</button>
+          <button class="tab-item" aria-selected="false">Futures</button>
+          <button class="tab-item" aria-selected="false">Margin Ratio</button>
+          <button class="tab-item" aria-selected="false">Swap</button>
+        </div>
+      </header>
+      <main class="main">
+        <div class="coins-tab" id="coins-tab">
+          <button class="tab-item" aria-selected="true">USDⓈ-M</button>
+          <button class="tab-item" aria-selected="false">COIN-M</button>
+        </div>
+        <div class="title-wrapper">
+          <div class="flex-row">
+            <h1 class="title">Margin Balance</h1>
+            <svg
+              class="icon"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"
+              ></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </div>
+          <div class="flex-row icons">
+            <img class="icon-image" src="{% static "images/box1.png" %}" alt="" srcset="" />
+            <!-- <svg class="icon" style="color: #fff; width: 1.25rem; height: 1.25rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 7.5v3H2.5l7-7v4H21zM3 16.5v-3h18.5l-7 7v-4H3z" fill="currentColor"></path></svg> -->
+            <img class="icon-image" src="{% static "images/box2.png" %}" alt="" srcset="" />
+            <img class="icon-image" src="{% static "images/box3.png" %}" alt="" srcset="" />
+          </div>
+        </div>
+        <div class="balance-wrapper">
+          <div class="current-balance-wrapper">
+            <div class="current-balance">730.88</div>
+            <select class="currency-select">
+              <option value="USD">USD</option>
+              <option value="Matrix">Matrix</option>
+              <option value="XPDT">XPDT</option>
+            </select>
+          </div>
+          <p class="approximate-balance">~$731.68</p>
+          <div class="pnl">
+            <span class="pnl-label">Today' s Realized PnL</span>
+            <span class="pnl-value">+$0.87 (+0.11%)</span>
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </div>
+          <div class="wallets">
+            <div class="wallet">
+              <h2 class="wallet-name">Wallet Balance(USDT)</h2>
+              <p class="wallet-balance">7888.80</p>
+              <p class="wallet-balance-approx">~$789.66</p>
+            </div>
+            <div class="wallet">
+              <h2 class="wallet-name">Unrealized PNL (USDT)</h2>
+              <p class="wallet-balance">-57.91</p>
+              <p class="wallet-balance-approx">~$-57.978</p>
+            </div>
+          </div>
+          <div class="buttons">
+            <button class="button active">Trade</button>
+            <button class="button">Swap</button>
+            <button class="button">Transfer</button>
+          </div>
+        </div>
+        <div class="toggle-container">
+          <div class="toggle-label">Use BNB for fees (10% discount)</div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="toggle" />
+            <div class="toggle-slider"></div>
+          </div>
+        </div>
+        <div class="unknown-tabs" id="unknown-tabs">
+          <button class="tab-item" aria-selected="true">Positions</button>
+          <button class="tab-item" aria-selected="false">Assets</button>
+        </div>
+        <div class="binance-cards">
+          <!-- CARD 1 -->
+          <div class="binance-card">
+            <div class="binance-card-header">
+              <img class="icon-image" src="{% static "images/B.png" %}" alt="" srcset="">
+              <span class="pair">XRPUSDT</span>
+              <span class="type">Perp</span>
+              <span class="leverage">Cross 75x</span>
+              <img class="icon-image" src="{% static "images/exclamation_mark.png" %}" alt="" srcset="">
+              <svg
+                class="icon share-icon"
+                style="color: rgb(55, 65, 81)"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+                <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+              </svg>
+            </div>
+            <div class="binance-card-content">
+              <div class="grid-2">
+                <div class="cell-item">
+                  <span class="label">Unrealized PNL (USDT)</span>
+                  <span class="value red">0</span>
+                </div>
+                <div class="cell-item">
+                  <span class="label">ROI</span>
+                  <span class="value red">-2.45%</span>
+                </div>
+              </div>
+              <div class="grid-3">
+                <div class="cell-item">
+                  <span class="label">Size (USDT)</span>
+                  <span class="value">24.8948</span>
+                </div>
+                <div class="cell-item">
+                  <span class="label">Margin (USDT)</span>
+                  <span class="value">0.33%</span>
+                </div>
+                <div class="cell-item">
+                  <span class="label">Entry Price (USDT)</span>
+                  <span class="value">1.376</span>
+                </div>
+                <div class="cell-item">
+                  <span class="label">Margin Ratio</span>
+                  <span class="value green">2.68%</span>
+                </div>
+                <div class="cell-item">
+                  <span class="label">Mark Price</span>
+                  <span class="value">1.3753%</span>
+                </div>
+                <div class="cell-item">
+                  <span class="label">Liq. Price</span>
+                  <span class="value green">40.4357%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="binance-card">
+            <div class="binance-card-header">
+              <img class="icon-image" src="{% static "images/S.png" %}" alt="" srcset="">
+              <span class="pair">XRPUSDT</span>
+              <span class="type">Perp</span>
+              <span class="leverage">Cross 75x</span>
+              <img class="icon-image" src="{% static "images/exclamation_mark.png" %}" alt="" srcset="">
+              <svg
+                class="icon share-icon"
+                style="color: rgb(55, 65, 81)"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+                <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+              </svg>
+            </div>
+            <div class="binance-card-content">
+              <div class="grid-2">
+                <div class="cell-item">
+                  <span class="label">Unrealized PNL (USDT)</span>
+                  <span class="value red">0</span>
+                </div>
+                <div class="cell-item">
+                  <span class="label">ROI</span>
+                  <span class="value red">-2.45%</span>
+                </div>
+              </div>
+              <div class="grid-3">
+                <div class="cell-item">
+                  <span class="label">Size (USDT)</span>
+                  <span class="value">24.8948</span>
+                </div>
+                <div class="cell-item">
+                  <span class="label">Margin (USDT)</span>
+                  <span class="value">0.33%</span>
+                </div>
+                <div class="cell-item">
+                  <span class="label">Entry Price (USDT)</span>
+                  <span class="value">1.376</span>
+                </div>
+                <div class="cell-item">
+                  <span class="label">Margin Ratio</span>
+                  <span class="value green">2.68%</span>
+                </div>
+                <div class="cell-item">
+                  <span class="label">Mark Price</span>
+                  <span class="value">1.3753%</span>
+                </div>
+                <div class="cell-item">
+                  <span class="label">Liq. Price</span>
+                  <span class="value green">40.4357%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="binance-card">
+            <div class="binance-card-header">
+              <img class="icon-image" src="{% static "images/B.png" %}" alt="" srcset="">
+              <span class="pair">XRPUSDT</span>
+              <span class="type">Perp</span>
+              <span class="leverage">Cross 75x</span>
+              <img class="icon-image" src="{% static "images/exclamation_mark.png" %}" alt="" srcset="">
+              <svg
+                class="icon share-icon"
+                style="color: rgb(55, 65, 81)"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+                <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+              </svg>
+            </div>
+            <div class="binance-card-content">
+              <div class="grid-2">
+                <div class="cell-item">
+                  <span class="label">Unrealized PNL (USDT)</span>
+                  <span class="value red">0</span>
+                </div>
+                <div class="cell-item">
+                  <span class="label">ROI</span>
+                  <span class="value red">-2.45%</span>
+                </div>
+              </div>
+              <div class="grid-3">
+                <div class="cell-item">
+                  <span class="label">Size (USDT)</span>
+                  <span class="value">24.8948</span>
+                </div>
+                <div class="cell-item">
+                  <span class="label">Margin (USDT)</span>
+                  <span class="value">0.33%</span>
+                </div>
+                <div class="cell-item">
+                  <span class="label">Entry Price (USDT)</span>
+                  <span class="value">1.376</span>
+                </div>
+                <div class="cell-item">
+                  <span class="label">Margin Ratio</span>
+                  <span class="value green">2.68%</span>
+                </div>
+                <div class="cell-item">
+                  <span class="label">Mark Price</span>
+                  <span class="value">1.3753%</span>
+                </div>
+                <div class="cell-item">
+                  <span class="label">Liq. Price</span>
+                  <span class="value green">40.4357%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer-content" id="footer-menu-tab">
+          <button class="tab-item" aria-selected="true">
+            <svg class="icon home-icon" viewBox="0 0 16 16">
+              <path
+                d="M1 6V15H6V11C6 9.89543 6.89543 9 8 9C9.10457 9 10 9.89543 10 11V15H15V6L8 0L1 6Z"
+              />
+            </svg>
+            <span>Home</span>
+          </button>
+          <button class="tab-item" aria-selected="false">
+            <svg
+              class="icon icon-market"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="18" x2="18" y1="20" y2="10"></line>
+              <line x1="12" x2="12" y1="20" y2="4"></line>
+              <line x1="6" x2="6" y1="20" y2="14"></line>
+            </svg>
+            <span>Market</span>
+          </button>
+          <button class="tab-item" aria-selected="false">
+            <!-- <svg class="icon trade-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><use xlink:href="#trade-f"></use></svg> -->
+             <img class="icon-image" src="{% static "images/footer1.png" %}" alt="" srcset="">
+            <span>Trade</span>
+          </button>
+          <button class="tab-item" aria-selected="false">
+            <!-- <svg class="icon trade-icon" viewBox="0 0 24 24">
+              <path
+                d="M6 19L3 16M3 16L6 13M3 16H11C12.6569 16 14 14.6569 14 13V12M10 12V11C10 9.34315 11.3431 8 13 8H21M21 8L18 11M21 8L18 5"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg> -->
+            <img class="icon-image" src="{% static "images/footer2.png" %}" alt="" srcset="">
+            <span>Futures</span>
+          </button>
+          <button class="tab-item" aria-selected="false">
+            <svg
+              class="wallet-icon icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M4 8.5A4.5 4.5 0 018.5 4H20v16H8.5A4.5 4.5 0 014 15.5v-7zM8.5 7H17v3H8.5a1.5 1.5 0 110-3zm4.5 6h4v4h-4v-4z"></path></svg>
+            <span>Wallet</span>
+          </button>
+        </div>
+      </footer>
+    </div>
+  </body>
+
+  <script>
+    const buttons = document.querySelectorAll('.buttons .button');
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            // Remove 'active' class from all buttons
+            buttons.forEach((btn) => btn.classList.remove('active'));
+            // Add 'active' class to the clicked button
+            button.classList.add('active');
+        });
+    });
+
+    class ClickAndDragScrollX {
+      constructor(el) {
+        this.el = el;
+        this.scrollLeft = 0;
+        this.isDown = false;
+        this.startX = 0;
+        this.el.addEventListener('mousedown', this.onMouseDown.bind(this));
+        this.el.addEventListener('mouseleave', this.onMouseUp.bind(this));
+        this.el.addEventListener('mouseup', this.onMouseUp.bind(this));
+        this.el.addEventListener('mousemove', this.onMouseMove.bind(this));
+      }
+
+      onMouseDown(e) {
+        this.isDown = true;
+        this.startX = e.pageX - this.el.offsetLeft;
+        this.scrollLeft = this.el.scrollLeft;
+      }
+
+      onMouseUp() {
+        this.isDown = false;
+      }
+
+      onMouseMove(e) {
+        if (!this.isDown) return;
+        e.preventDefault();
+        const x = e.pageX - this.el.offsetLeft;
+        const walk = (x - this.startX) * 2; //scroll-fast
+        this.el.scrollLeft = this.scrollLeft - walk;
+      }
+    }
+
+    class Tabs {
+      constructor(parentElement) {
+        this.parentElement = parentElement;
+        this.tabs = Array.from(this.parentElement.children);
+
+        this.tabs.forEach((tab) => {
+          tab.addEventListener('click', this.onTabClick.bind(this));
+        });
+      }
+
+      onTabClick(e) {
+        const currentIndex = this.tabs.indexOf(e.currentTarget);
+        const clickedTab = this.tabs[currentIndex];
+        this.tabs.forEach((tab, index) => {
+          tab.setAttribute('aria-selected', index === currentIndex);
+        });
+        clickedTab.setAttribute('aria-selected', 'true');
+        this.parentElement.scrollLeft = 0;
+      }
+    }
+
+    new ClickAndDragScrollX(document.querySelector('.scrollable-tabs'));
+    new Tabs(document.getElementById('tabs-menu-tab'));
+    new Tabs(document.getElementById('scrollable-tabs'));
+    new Tabs(document.getElementById('coins-tab'));
+    new Tabs(document.getElementById('footer-menu-tab'));
+    new Tabs(document.getElementById('unknown-tabs'));
+  </script>
+</html>
