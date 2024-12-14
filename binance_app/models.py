@@ -66,7 +66,8 @@ class Position(models.Model):
     @property
     def mark_price(self):
         """Fetch the real-time Mark Price from Binance API."""
-        url = f'https://fapi.binance.com/fapi/v1/premiumIndex?symbol={self.symbol.upper()}'
+        # url = f'https://fapi.binance.com/fapi/v1/premiumIndex?symbol={self.symbol.upper()}'
+        url = f'https://testnet.binancefuture.com/fapi/v1/premiumIndex?symbol={self.symbol.upper()}'
         response = requests.get(url)
         data = response.json()
         print("mark_price")
