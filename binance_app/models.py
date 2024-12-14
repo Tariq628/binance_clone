@@ -69,6 +69,8 @@ class Position(models.Model):
         url = f'https://fapi.binance.com/fapi/v1/premiumIndex?symbol={self.symbol.upper()}'
         response = requests.get(url)
         data = response.json()
+        print("mark_price")
+        print(data)
         mark_price_value = Decimal(data['markPrice'])
         return mark_price_value.quantize(Decimal('0.0001'))  # Round to 4 decimal places
 
