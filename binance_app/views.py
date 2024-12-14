@@ -1,7 +1,7 @@
 from decimal import Decimal
 from django.shortcuts import render
 
-from binance_app.models import Portfolio
+from binance_app.models import Portfolio, Position
 
 def round_to_two_decimal_places(value):
     """Round a value to two decimal places using Decimal."""
@@ -10,6 +10,7 @@ def round_to_two_decimal_places(value):
 # Create your views here.
 def index(request):
     portfolio = Portfolio.objects.first()  # Fetch the first portfolio (or adjust for your needs)
+    positions = Position.objects.all()  # Fetch all positions
     
     # Calculate the unrealized PnL and margin balance
     unrealized_pnl = portfolio.calculate_unrealized_pnl()  
@@ -28,4 +29,6 @@ def index(request):
         'unrealized_pnl': unrealized_pnl,
         'margin_balance': margin_balance,
         'wallet_balance': wallet_balance,
+        # 'portfolio': portfolio,
+        'positions': positions
     })

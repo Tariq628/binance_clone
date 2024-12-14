@@ -24,28 +24,30 @@ class Position(models.Model):
     @property
     def margin(self):
         """Calculate the margin based on Position Size, Entry Price, and Leverage."""
-        return (self.size * self.entry_price) / self.leverage
+        margin = (self.size * self.entry_price) / self.leverage
+        return margin.quantize(Decimal('0.00'))  # Round to 2 decimal places
 
     @property
     def unrealized_pnl(self):
         """Calculate unrealized PnL based on market price and entry price."""
         mark_price = self.mark_price
         if self.position_type == 'long':
-            print("(mark_price - self.entry_price) * self.initial_quantity")
-            print((mark_price))
-            print((self.entry_price))
-            print((self.initial_quantity))
-            print((mark_price - self.entry_price) * self.initial_quantity)
-            return (mark_price - self.entry_price) * self.initial_quantity
+            unrealized = (mark_price - self.entry_price) * self.initial_quantity
         else:
-            print("(mark_price - self.entry_price) * self.initial_quantity")
-            print((mark_price - self.entry_price) * self.initial_quantity)
-            return (self.entry_price - mark_price) * self.initial_quantity
+            unrealized = (self.entry_price - mark_price) * self.initial_quantity
+        return unrealized.quantize(Decimal('0.00'))  # Round to 2 decimal places
+
+    @property
+    def size(self):
+        """Calculate the size (total value of holdings)."""
+        size_value = self.initial_quantity * self.mark_price
+        return size_value.quantize(Decimal('0.0001'))  # Round to 4 decimal places
 
     @property
     def roi(self):
         """Calculate ROI based on unrealized PnL and margin."""
-        return (self.unrealized_pnl / self.margin) * 100
+        roi_value = (self.unrealized_pnl / self.margin) * 100
+        return roi_value.quantize(Decimal('0.00'))  # Round to 2 decimal places
 
     @property
     def margin_ratio(self):
@@ -53,12 +55,13 @@ class Position(models.Model):
         maint_margin = self.maintenance_margin  # Maintenance margin rate (0.6% default)
         unrealized_loss = self.unrealized_pnl if self.unrealized_pnl < 0 else 0
         margin_balance = self.margin  # Margin balance, in this case, it's the margin
-        return ((maint_margin + unrealized_loss) / margin_balance) * 100
+        margin_ratio_value = ((maint_margin + unrealized_loss) / margin_balance) * 100
+        return margin_ratio_value.quantize(Decimal('0.00'))  # Round to 2 decimal places
 
     @property
     def maintenance_margin(self):
         """Calculate the maintenance margin (0.6% default)."""
-        return self.size * 0.006
+        return self.size * Decimal('0.006')
 
     @property
     def mark_price(self):
@@ -66,18 +69,25 @@ class Position(models.Model):
         url = f'https://fapi.binance.com/fapi/v1/premiumIndex?symbol={self.symbol.upper()}'
         response = requests.get(url)
         data = response.json()
-        return Decimal(data['markPrice'])
-
+        mark_price_value = Decimal(data['markPrice'])
+        return mark_price_value.quantize(Decimal('0.0001'))  # Round to 4 decimal places
 
     @property
     def liq_price(self):
         """Generate a random fluctuation in the given range."""
-        fluctuation_range = self.fluctuation_max - self.fluctuation_min
-        random_fluctuation = random.uniform(self.fluctuation_min, self.fluctuation_max)
-        return random_fluctuation
+        # Convert Decimal values to float for use with random.uniform()
+        fluctuation_min_float = float(self.fluctuation_min)
+        fluctuation_max_float = float(self.fluctuation_max)
+        
+        # Generate a random fluctuation within the range
+        random_fluctuation = random.uniform(fluctuation_min_float, fluctuation_max_float)
+        
+        # Convert back to Decimal and round to 4 decimal places
+        return Decimal(random_fluctuation).quantize(Decimal('0.0001'))  # Round to 4 decimal places
 
     def __str__(self):
         return f"Position {self.symbol} - {self.position_type.capitalize()}"
+
 
 
 class Portfolio(models.Model):
