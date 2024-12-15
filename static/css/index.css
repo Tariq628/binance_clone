@@ -71,6 +71,11 @@ body {
 
     margin-bottom: 1rem;
 
+    .tab-position {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    
     .tab-item {
       color: #737373;
       border-radius: 0.5rem;
