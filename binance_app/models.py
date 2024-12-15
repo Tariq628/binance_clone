@@ -53,9 +53,10 @@ class Position(models.Model):
     def margin_ratio(self):
         """Calculate margin ratio using Maintenance Margin + Unrealized Loss."""
         maint_margin = self.maintenance_margin  # Maintenance margin rate (0.6% default)
-        unrealized_loss = self.unrealized_pnl if self.unrealized_pnl < 0 else 0
-        margin_balance = self.margin  # Margin balance, in this case, it's the margin
-        margin_ratio_value = ((maint_margin + unrealized_loss) / margin_balance) * 100
+        # unrealized_loss = self.unrealized_pnl if self.unrealized_pnl < 0 else 0
+        # margin_balance = self.margin  # Margin balance, in this case, it's the margin
+        # margin_ratio_value = ((maint_margin + unrealized_loss) / margin_balance) * 100
+        margin_ratio_value = maint_margin / self.margin
         return margin_ratio_value.quantize(Decimal('0.00'))  # Round to 2 decimal places
 
     @property
