@@ -24,7 +24,7 @@ class Position(models.Model):
     @property
     def margin(self):
         """Calculate the margin based on Position Size, Entry Price, and Leverage."""
-        margin = (self.size * self.entry_price) / self.leverage
+        margin = self.size / self.leverage
         return margin.quantize(Decimal('0.00'))  # Round to 2 decimal places
 
     @property
