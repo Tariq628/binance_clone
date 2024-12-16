@@ -36,7 +36,7 @@
         </div>
         <div class="title-wrapper">
           <div class="flex-row">
-            <h1 class="title">Margin Balance</h1>
+            <h1 class="title dotted">Margin Balance</h1>
             <svg
               class="icon"
               width="24"
@@ -75,7 +75,7 @@
             <span class="pnl-label">Today' s Realized PnL</span>
             <span class="pnl-value">+$0.87 (+0.11%)</span>
             <svg
-              class="icon"
+              class="icon arrow-icon"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -83,7 +83,6 @@
               stroke-linecap="round"
               stroke-linejoin="round"
             >
-              <path d="M5 12h14"></path>
               <path d="m12 5 7 7-7 7"></path>
             </svg>
           </div>
@@ -91,16 +90,16 @@
             <div class="wallet">
               <h2 class="wallet-name">Wallet Balance(USDT)</h2>
               <p class="wallet-balance">{{wallet_balance}}</p>
-              <p class="wallet-balance-approx">{{wallet_balance}}</p>
+              <p class="wallet-balance-approx">≈{{wallet_balance}}</p>
             </div>
             <div class="wallet">
-              <h2 class="wallet-name">Unrealized PNL (USDT)</h2>
+              <h2 class="wallet-name dotted">Unrealized PNL (USDT)</h2>
               <p class="wallet-balance">{{unrealized_pnl}}</p>
               <p class="wallet-balance-approx">≈{{unrealized_pnl}}</p>
             </div>
           </div>
           <div class="buttons">
-            <button class="button active">Trade</button>
+            <button class="button active-btn">Trade</button>
             <button class="button">Swap</button>
             <button class="button">Transfer</button>
           </div>
@@ -141,7 +140,7 @@
                   <div class="binance-card-content">
                       <div class="grid-2">
                           <div class="cell-item">
-                              <span class="label">Unrealized PNL (USDT)</span>
+                              <span class="label dotted">Unrealized PNL (USDT)</span>
                               <span class="value red">{{ position.unrealized_pnl }}</span>
                           </div>
                           <div class="cell-item">
