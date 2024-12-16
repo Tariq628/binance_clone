@@ -64,11 +64,14 @@
         <div class="balance-wrapper">
           <div class="current-balance-wrapper">
             <div class="current-balance">{{margin_balance}}</div>
-            <select class="currency-select">
-              <option value="USD">USD</option>
-              <option value="Matrix">Matrix</option>
-              <option value="XPDT">XPDT</option>
-            </select>
+            <div class="currency-select-container">
+              <select class="currency-select">
+                <option value="USD">USDT</option>
+                <option value="Matrix">Matrix</option>
+                <option value="XPDT">XPDT</option>
+              </select>
+              <svg class="dropdown-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.5 8.49v2.25L12 15.51l-4.5-4.77V8.49h9z" fill="currentColor"></path></svg>            
+            </div>
           </div>
           <p class="approximate-balance">≈{{margin_balance}}</p>
           <div class="pnl">
