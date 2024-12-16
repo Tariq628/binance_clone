@@ -15,7 +15,7 @@
 }
 
 body {
-  background-color: #191a1f;
+  background-color: #1f2630;
   color: #fff;
   font-family: Binance Plex, Arial, sans-serif !important;
   font-weight: bolder;
@@ -34,6 +34,13 @@ body {
   height: 1.5rem;
 }
 
+.footer-icon {
+  color: #737373;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .green {
   color: #00d395;
 }
@@ -43,7 +50,9 @@ body {
 }
 
 .dotted {
-  border-bottom: #374151 dotted 1px;
+  color: #fefefe !important;
+  border-bottom: #fefefe dotted 1px !important;
+  width: fit-content;
 }
 
 .currency-select-container {
@@ -98,7 +107,7 @@ body {
     background-color: #2a2b3d;
     border-radius: 0.5rem;
     padding: 0.125rem;
-    width: 50%;
+    width: 200px;
 
     margin-bottom: 1rem;
 
@@ -115,7 +124,7 @@ body {
 
       &[aria-selected='true'] {
         color: #fff;
-        background-color: #191a1f;
+        background-color: #1f2630;
       }
     }
   }
@@ -151,7 +160,7 @@ body {
       font-weight: bold;
       font-size: 14px;
 
-      &[aria-selected='true'] {
+      &[aria-selected='true'] { 
         opacity: 1;
       }
     }
@@ -169,7 +178,7 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 0.125rem;
-    border-top: 1px solid #374151;
+    /* border-top: 1px solid #374151; */
 
     padding: 0.125rem;
 
@@ -197,7 +206,7 @@ body {
 
       &[aria-selected='true'] {
         color: #fff;
-        background-color: #191a1f;
+        background-color: #1f2630;
 
         svg.icon {
           fill: #fff;
@@ -453,8 +462,8 @@ body {
     position: sticky;
     top: 0;
     z-index: 10;
-    background-color: #191a1f; /* Solid background to prevent transparency while scrolling */
-    border-bottom: 1px solid #374151; /* Optional: you can add a border to separate it visually */
+    background-color: #1f2630; /* Solid background to prevent transparency while scrolling */
+    /* border-bottom: 1px solid #374151; Optional: you can add a border to separate it visually */
 
     
     .tab-position {

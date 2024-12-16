@@ -131,14 +131,7 @@
                       <span class="type">Perp</span>
                       <span class="leverage">Cross {{ position.leverage }}x</span>  <!-- Dynamically display leverage -->
                       <img class="icon-image" src="{% static 'images/exclamation_mark.png' %}" alt="" />
-                      <svg class="icon share-icon" style="color: rgb(55, 65, 81)" viewBox="0 0 24 24" fill="none"
-                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <circle cx="18" cy="5" r="3"></circle>
-                          <circle cx="6" cy="12" r="3"></circle>
-                          <circle cx="18" cy="19" r="3"></circle>
-                          <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
-                          <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
-                      </svg>
+                      <img src="{% static 'images/share.png' %}" class="icon share-icon" alt="" srcset="">
                   </div>
                   <div class="binance-card-content">
                       <div class="grid-2">
@@ -153,7 +146,7 @@
                       </div>
                       <div class="grid-3">
                           <div class="cell-item">
-                              <span class="label">Size (USDT)</span>
+                              <span class="label dotted">Size (USDT)</span>
                               <span class="value">{{ position.size }}</span>
                           </div>
                           <div class="cell-item">
@@ -161,12 +154,12 @@
                               <span class="value">{{ position.margin }}</span>
                           </div>
                           <div class="cell-item">
-                              <span class="label">Entry Price (USDT)</span>
-                              <span class="value">{{ position.entry_price }}</span>
-                          </div>
-                          <div class="cell-item">
                               <span class="label">Margin Ratio</span>
                               <span class="value green">{{ position.margin_ratio }}%</span>
+                          </div>
+                          <div class="cell-item">
+                              <span class="label">Entry Price (USDT)</span>
+                              <span class="value">{{ position.entry_price }}</span>
                           </div>
                           <div class="cell-item">
                               <span class="label">Mark Price</span>
@@ -186,32 +179,16 @@
       <footer class="footer">
         <div class="footer-content" id="footer-menu-tab">
           <button class="tab-item" aria-selected="true">
-            <svg class="icon home-icon" viewBox="0 0 16 16">
-              <path
-                d="M1 6V15H6V11C6 9.89543 6.89543 9 8 9C9.10457 9 10 9.89543 10 11V15H15V6L8 0L1 6Z"
-              />
-            </svg>
+            <img src="{% static 'images/home.png' %}" class="footer-icon home-icon" alt="" srcset="">
             <span>Home</span>
           </button>
           <button class="tab-item" aria-selected="false">
-            <svg
-              class="icon icon-market"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <line x1="18" x2="18" y1="20" y2="10"></line>
-              <line x1="12" x2="12" y1="20" y2="4"></line>
-              <line x1="6" x2="6" y1="20" y2="14"></line>
-            </svg>
+            <img src="{% static 'images/Markets.png' %}" class="footer-icon icon-market" alt="" srcset="">
             <span>Market</span>
           </button>
           <button class="tab-item" aria-selected="false">
             <!-- <svg class="icon trade-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><use xlink:href="#trade-f"></use></svg> -->
-             <img class="icon-image" src="{% static "images/footer1.png" %}" alt="" srcset="">
+            <img src="{% static 'images/Trade.png' %}" class="footer-icon home-icon" alt="" srcset="">
             <span>Trade</span>
           </button>
           <button class="tab-item" aria-selected="false">
@@ -223,20 +200,11 @@
                 stroke-linejoin="round"
               />
             </svg> -->
-            <img class="icon-image" src="{% static "images/footer2.png" %}" alt="" srcset="">
+            <img src="{% static 'images/Futures.png' %}" class="footer-icon home-icon" alt="" srcset="">
             <span>Futures</span>
           </button>
           <button class="tab-item" aria-selected="false">
-            <svg
-              class="wallet-icon icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M4 8.5A4.5 4.5 0 018.5 4H20v16H8.5A4.5 4.5 0 014 15.5v-7zM8.5 7H17v3H8.5a1.5 1.5 0 110-3zm4.5 6h4v4h-4v-4z"></path></svg>
+            <img src="{% static 'images/wallet.png' %}" class="footer-icon icon-market" alt="" srcset="">
             <span>Wallet</span>
           </button>
         </div>
