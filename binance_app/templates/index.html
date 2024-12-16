@@ -134,16 +134,20 @@
                       <img src="{% static 'images/share.png' %}" class="icon share-icon" alt="" srcset="">
                   </div>
                   <div class="binance-card-content">
-                      <div class="grid-2">
-                          <div class="cell-item">
-                              <span class="label dotted">Unrealized PNL (USDT)</span>
-                              <span class="value red">{{ position.unrealized_pnl }}</span>
-                          </div>
-                          <div class="cell-item">
-                              <span class="label">ROI</span>
-                              <span class="value red">{{ position.roi }}%</span>
-                          </div>
+                    <div class="grid-2">
+                      <div class="cell-item">
+                          <span class="label dotted">Unrealized PNL (USDT)</span>
+                          <span class="value {% if position.unrealized_pnl > 0 %}green{% else %}red{% endif %}">
+                              {{ position.unrealized_pnl }}
+                          </span>
                       </div>
+                      <div class="cell-item">
+                          <span class="label">ROI</span>
+                          <span class="value {% if position.roi > 0 %}green{% else %}red{% endif %}">
+                              {{ position.roi }}%
+                          </span>
+                      </div>
+                  </div>
                       <div class="grid-3">
                           <div class="cell-item">
                               <span class="label dotted">Size (USDT)</span>
