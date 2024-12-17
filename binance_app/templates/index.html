@@ -136,7 +136,7 @@
                   <div class="binance-card-content">
                     <div class="grid-2">
                       <div class="cell-item">
-                          <span class="label dotted">Unrealized PNL (USDT)</span>
+                          <span class="label">Unrealized PNL (USDT)</span>
                           <span class="value {% if position.unrealized_pnl > 0 %}green{% else %}red{% endif %}">
                               {{ position.unrealized_pnl }}
                           </span>
@@ -158,7 +158,7 @@
                               <span class="value">{{ position.margin }}</span>
                           </div>
                           <div class="cell-item">
-                              <span class="label">Margin Ratio</span>
+                              <span class="label dotted">Margin Ratio</span>
                               <span class="value green">{{ position.margin_ratio }}%</span>
                           </div>
                           <div class="cell-item">
