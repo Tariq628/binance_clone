@@ -200,8 +200,9 @@ body {
       outline: 0;
 
       svg.icon {
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-bottom: 0.5rem;
         fill: currentColor;
         stroke: currentColor;
       }
