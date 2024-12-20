@@ -124,11 +124,15 @@
           {% for position in positions %}
               <div class="binance-card">
                   <div class="binance-card-header">
-                      {% if position.position_type == "long" %}
-                      <img class="icon-image" src="{% static 'images/B.png' %}" alt="" />
-                      {% else %}
-                      <img class="icon-image" src="{% static 'images/S.png' %}" alt="" />
-                      {% endif %}
+                    {% if position.position_type == "long" %}
+                      <img class="icon-image" 
+                          src="{% static 'images/' %}{% if lang == 'zh' %}chinese_b.png{% else %}B.png{% endif %}" 
+                          alt="" />
+                    {% else %}
+                      <img class="icon-image" 
+                          src="{% static 'images/' %}{% if lang == 'zh' %}chinese_s.png{% else %}S.png{% endif %}" 
+                          alt="" />
+                    {% endif %}
                       <span class="pair">{{ position.symbol }}</span>
                       <span class="type">{% trans "Perp" %}</span>
                       <span class="leverage">{% trans "Cross" %} {{ position.leverage }}x</span>  <!-- Dynamically display leverage -->

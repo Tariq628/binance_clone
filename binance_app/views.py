@@ -36,5 +36,6 @@ def index(request):
         'unrealized_pnl': unrealized_pnl,
         'margin_balance': margin_balance,
         'wallet_balance': wallet_balance,
-        'positions': positions
+        'positions': positions,
+        'lang': lang
     })
