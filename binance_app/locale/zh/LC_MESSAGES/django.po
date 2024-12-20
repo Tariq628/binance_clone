@@ -1,0 +1,139 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-21 01:27+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\templates\index.html:18
+msgid "Exchange"
+msgstr "交易平台"
+
+#: .\templates\index.html:23
+msgid "Overview"
+msgstr "总览"
+
+#: .\templates\index.html:24
+msgid "Spot"
+msgstr "现货"
+
+#: .\templates\index.html:25
+msgid "Funding"
+msgstr "资金"
+
+#: .\templates\index.html:26
+msgid "Earn"
+msgstr "理财"
+
+#: .\templates\index.html:27 .\templates\index.html:201
+msgid "Futures"
+msgstr "合约"
+
+#: .\templates\index.html:28
+msgid "Margin"
+msgstr "杠杆"
+
+#: .\templates\index.html:29
+msgid "Copy Trading"
+msgstr "跟单交易"
+
+#: .\templates\index.html:30
+msgid "Options"
+msgstr "期权"
+
+#: .\templates\index.html:36
+msgid "USDⓈ-M"
+msgstr ""
+
+#: .\templates\index.html:37
+msgid "COIN-M"
+msgstr "U本位"
+
+#: .\templates\index.html:41
+msgid "Margin Balance"
+msgstr "保证金余额"
+
+#: .\templates\index.html:80
+msgid "Today's Realized PnL"
+msgstr "今日已实现盈亏"
+
+#: .\templates\index.html:96
+msgid "Wallet Balance (USDT)"
+msgstr "钱包余额"
+
+#: .\templates\index.html:101 .\templates\index.html:141
+msgid "Unrealized PNL (USDT)"
+msgstr "未实现盈亏"
+
+#: .\templates\index.html:107 .\templates\index.html:197
+msgid "Trade"
+msgstr "交易"
+
+#: .\templates\index.html:108
+msgid "Swap"
+msgstr "兑换"
+
+#: .\templates\index.html:109
+msgid "Transfer"
+msgstr "划转"
+
+#: .\templates\index.html:113
+#, python-format
+msgid "Use BNB for fees (10%% discount)"
+msgstr "使用BNB抵扣(10%%折扣)"
+
+#: .\templates\index.html:120
+msgid "Positions"
+msgstr "持有仓位"
+
+#: .\templates\index.html:121
+msgid "Assets"
+msgstr "资产"
+
+#: .\templates\index.html:133
+msgid "Perp"
+msgstr "永续"
+
+#: .\templates\index.html:134
+msgid "Cross"
+msgstr "全仓"
+
+#: .\templates\index.html:147
+msgid "ROI"
+msgstr "回报率"
+
+#: .\templates\index.html:163
+msgid "Margin Ratio"
+msgstr "保证金比率"
+
+#: .\templates\index.html:171
+msgid "Mark Price"
+msgstr "标记价格"
+
+#: .\templates\index.html:175
+msgid "Liq. Price"
+msgstr "强平价格"
+
+#: .\templates\index.html:189
+msgid "Home"
+msgstr "首页"
+
+#: .\templates\index.html:193
+msgid "Market"
+msgstr "行情"
+
+#: .\templates\index.html:205
+msgid "Wallet"
+msgstr "钱包"

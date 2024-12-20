@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,30 +15,30 @@
     <div class="app">
       <header class="header">
         <div class="tabs" id="tabs-menu-tab">
-          <button class="tab-item" aria-selected="true">Exchange</button>
+          <button class="tab-item" aria-selected="true">{% trans "Exchange" %}</button>
           <button class="tab-item" aria-selected="false">Web3</button>
         </div>
 
         <div class="scrollable-tabs" id="scrollable-tabs">
-          <button class="tab-item" aria-selected="true">Overview</button>
-          <button class="tab-item" aria-selected="false">Spot</button>
-          <button class="tab-item" aria-selected="false">Funding</button>
-          <button class="tab-item" aria-selected="false">Earn</button>
-          <button class="tab-item" aria-selected="false">Futures</button>
-          <button class="tab-item" aria-selected="false">Margin</button>
-          <button class="tab-item" aria-selected="false">Copy Trading</button>
-          <button class="tab-item" aria-selected="false">Options</button>
+          <button class="tab-item" aria-selected="true">{% trans "Overview" %}</button>
+          <button class="tab-item" aria-selected="false">{% trans "Spot" %}</button>
+          <button class="tab-item" aria-selected="false">{% trans "Funding" %}</button>
+          <button class="tab-item" aria-selected="false">{% trans "Earn" %}</button>
+          <button class="tab-item" aria-selected="false">{% trans "Futures" %}</button>
+          <button class="tab-item" aria-selected="false">{% trans "Margin" %}</button>
+          <button class="tab-item" aria-selected="false">{% trans "Copy Trading" %}</button>
+          <button class="tab-item" aria-selected="false">{% trans "Options" %}</button>
           <!-- <button class="tab-item" aria-selected="false">Swap</button> -->
         </div>
       </header>
       <main class="main">
         <div class="coins-tab" id="coins-tab">
-          <button style="padding: 0.5rem;" class="tab-item" aria-selected="true">USDⓈ-M</button>
-          <button style="padding: 0.5rem;" class="tab-item" aria-selected="false">COIN-M</button>
+          <button style="padding: 0.5rem;" class="tab-item" aria-selected="true">{% trans "USDⓈ-M" %}</button>
+          <button style="padding: 0.5rem;" class="tab-item" aria-selected="false">{% trans "COIN-M" %}</button>
         </div>
         <div class="title-wrapper">
           <div class="flex-row">
-            <h1 class="title dotted">Margin Balance</h1>
+            <h1 class="title dotted">{% trans "Margin Balance" %}</h1>
             <svg
               class="icon"
               width="24"
@@ -75,7 +77,7 @@
           </div>
           <p class="approximate-balance">≈<span style="margin: 2px;"></span>${{margin_balance}}</p>
           <div class="pnl">
-            <span class="pnl-label">Today' s Realized PnL</span>
+            <span class="pnl-label">{% trans "Today's Realized PnL" %}</span>
             <span class="pnl-value">+$0.87 (+0.11%)</span>
             <svg
               class="icon arrow-icon"
@@ -91,32 +93,32 @@
           </div>
           <div class="wallets">
             <div class="wallet">
-              <h2 class="wallet-name">Wallet Balance(USDT)</h2>
+              <h2 class="wallet-name">{% trans "Wallet Balance (USDT)" %}</h2>
               <p class="wallet-balance">{{wallet_balance}}</p>
               <p class="wallet-balance-approx">≈<span style="margin: 2px;"></span>${{wallet_balance}}</p>
             </div>
             <div class="wallet">
-              <h2 style="color: white;" class="wallet-name dotted">Unrealized PNL (USDT)</h2>
+              <h2 style="color: white;" class="wallet-name dotted">{% trans "Unrealized PNL (USDT)" %}</h2>
               <p class="wallet-balance">{{unrealized_pnl}}</p>
               <p class="wallet-balance-approx">≈<span style="margin: 2px;"></span>${{unrealized_pnl}}</p>
             </div>
           </div>
           <div class="buttons">
-            <button class="button active-btn">Trade</button>
-            <button class="button">Swap</button>
-            <button class="button">Transfer</button>
+            <button class="button active-btn">{% trans "Trade" %}</button>
+            <button class="button">{% trans "Swap" %}</button>
+            <button class="button">{% trans "Transfer" %}</button>
           </div>
         </div>
         <div class="toggle-container">
-          <div class="toggle-label">Use BNB for fees (10% discount)</div>
+          <div class="toggle-label">{% trans "Use BNB for fees (10% discount)" %}</div>
           <div class="toggle-switch">
             <input type="checkbox" id="toggle" />
             <div class="toggle-slider"></div>
           </div>
         </div>
         <div class="unknown-tabs" id="unknown-tabs">
-          <button class="tab-item tab-position" aria-selected="true">Positions</button>
-          <button class="tab-item" aria-selected="false">Assets</button>
+          <button class="tab-item tab-position" aria-selected="true">{% trans "Positions" %}</button>
+          <button class="tab-item" aria-selected="false">{% trans "Assets" %}</button>
         </div>
         <div class="binance-cards">
           {% for position in positions %}
@@ -128,21 +130,21 @@
                       <img class="icon-image" src="{% static 'images/S.png' %}" alt="" />
                       {% endif %}
                       <span class="pair">{{ position.symbol }}</span>
-                      <span class="type">Perp</span>
-                      <span class="leverage">Cross {{ position.leverage }}x</span>  <!-- Dynamically display leverage -->
+                      <span class="type">{% trans "Perp" %}</span>
+                      <span class="leverage">{% trans "Cross" %} {{ position.leverage }}x</span>  <!-- Dynamically display leverage -->
                       <img class="icon-image" src="{% static 'images/exclamation_mark.png' %}" alt="" />
                       <img src="{% static 'images/share.png' %}" class="icon share-icon" alt="" srcset="">
                   </div>
                   <div class="binance-card-content">
                     <div class="grid-2">
                       <div class="cell-item">
-                          <span class="label">Unrealized PNL (USDT)</span>
+                          <span class="label">{% trans "Unrealized PNL (USDT)" %}</span>
                           <span class="value {% if position.unrealized_pnl > 0 %}green{% else %}red{% endif %}">
                               {{ position.unrealized_pnl }}
                           </span>
                       </div>
                       <div class="cell-item">
-                          <span class="label">ROI</span>
+                          <span class="label">{% trans "ROI" %}</span>
                           <span class="value {% if position.roi > 0 %}green{% else %}red{% endif %}">
                               {{ position.roi }}%
                           </span>
@@ -158,7 +160,7 @@
                               <span class="value">{{ position.margin }}</span>
                           </div>
                           <div class="cell-item">
-                              <span class="label dotted">Margin Ratio</span>
+                              <span class="label dotted">{% trans "Margin Ratio" %}</span>
                               <span class="value green">{{ position.margin_ratio }}%</span>
                           </div>
                           <div class="cell-item">
@@ -166,11 +168,11 @@
                               <span class="value">{{ position.entry_price }}</span>
                           </div>
                           <div class="cell-item">
-                              <span class="label">Mark Price</span>
+                              <span class="label">{% trans "Mark Price" %}</span>
                               <span class="value">{{ position.mark_price }}</span>
                           </div>
                           <div class="cell-item">
-                              <span class="label">Liq. Price</span>
+                              <span class="label">{% trans "Liq. Price" %}</span>
                               <span class="value green">{{ position.liq_price }}</span>
                           </div>
                       </div>
@@ -184,32 +186,23 @@
         <div class="footer-content" id="footer-menu-tab">
           <button class="tab-item" aria-selected="true">
             <img src="{% static 'images/home.png' %}" class="footer-icon home-icon" alt="" srcset="">
-            <span>Home</span>
+            <span>{% trans "Home" %}</span>
           </button>
           <button class="tab-item" aria-selected="false">
             <img src="{% static 'images/Markets.png' %}" class="footer-icon icon-market" alt="" srcset="">
-            <span>Market</span>
+            <span>{% trans "Market" %}</span>
           </button>
           <button class="tab-item" aria-selected="false">
-            <!-- <svg class="icon trade-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><use xlink:href="#trade-f"></use></svg> -->
             <img src="{% static 'images/Trade.png' %}" class="footer-icon home-icon" alt="" srcset="">
-            <span>Trade</span>
+            <span>{% trans "Trade" %}</span>
           </button>
           <button class="tab-item" aria-selected="false">
-            <!-- <svg class="icon trade-icon" viewBox="0 0 24 24">
-              <path
-                d="M6 19L3 16M3 16L6 13M3 16H11C12.6569 16 14 14.6569 14 13V12M10 12V11C10 9.34315 11.3431 8 13 8H21M21 8L18 11M21 8L18 5"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg> -->
             <img src="{% static 'images/Futures.png' %}" class="footer-icon home-icon" alt="" srcset="">
-            <span>Futures</span>
+            <span>{% trans "Futures" %}</span>
           </button>
           <button class="tab-item" aria-selected="false">
             <svg class="icon icon-market" id="eAdbGmfuBgs1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" project-id="5b1d1232496c403ea93c9df6a7f4d520" export-id="8fb32e60cdc441ef9c0c6a172731e174" cached="false"><path class="svg-path" d="M34,84.6v-64c12.429262.261788,23.934173-2.113776,28.090921,3.740042C66.908458,31.124428,65.983007,40.555246,65.983007,52.6c0,10.337479.437942,23.655296-1.971175,27.003553C59.017461,86.544867,47.810755,83.844921,34,84.6Z" transform="matrix(-.709704 0 0 0.340428 47.4852-5.906513)" /><rect width="13.170704" height="2.787959" rx="0" ry="0" transform="matrix(1.010073 0 0 1.540108 6.842401 4.689114)" fill="#1f2630" stroke-width="0"/><rect width="2.4" height="2.4" rx="0" ry="0" transform="matrix(2.148998 0 0 2.06027 13.494087 13.452359)" fill="#1f2630" stroke-width="0"/></svg>
-            <span>Wallet</span>
+            <span>{% trans "Wallet" %}</span>
           </button>
         </div>
       </footer>
