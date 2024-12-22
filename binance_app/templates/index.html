@@ -38,7 +38,7 @@
         </div>
         <div class="title-wrapper">
           <div class="flex-row">
-            <h1 class="title dotted">{% trans "Margin Balance" %}</h1>
+            <h1 style="color:#e6eef1;" class="title dotted">{% trans "Margin Balance" %}</h1>
             <svg
               class="icon"
               width="24"
@@ -93,12 +93,12 @@
           </div>
           <div class="wallets">
             <div class="wallet">
-              <h2 class="wallet-name">{% trans "Wallet Balance (USDT)" %}</h2>
+              <h2 class="wallet-name">{% trans "Wallet Balance" %} (USDT)</h2>
               <p class="wallet-balance">{{wallet_balance}}</p>
               <p class="wallet-balance-approx">≈<span style="margin: 2px;"></span>${{wallet_balance}}</p>
             </div>
             <div class="wallet">
-              <h2 style="color: white;" class="wallet-name dotted">{% trans "Unrealized PNL (USDT)" %}</h2>
+              <h2 style="color: #878e98;" class="wallet-name dotted">{% trans "Unrealized PNL" %} (USDT)</h2>
               <p class="wallet-balance">{{unrealized_pnl}}</p>
               <p class="wallet-balance-approx">≈<span style="margin: 2px;"></span>${{unrealized_pnl}}</p>
             </div>
@@ -142,7 +142,7 @@
                   <div class="binance-card-content">
                     <div class="grid-2">
                       <div class="cell-item">
-                          <span class="label">{% trans "Unrealized PNL (USDT)" %}</span>
+                          <span style="color: #878e98;" class="label">{% trans "Unrealized PNL (USDT)" %}</span>
                           <span class="value {% if position.unrealized_pnl > 0 %}green{% else %}red{% endif %}">
                               {{ position.unrealized_pnl }}
                           </span>
@@ -156,11 +156,11 @@
                   </div>
                       <div class="grid-3">
                           <div class="cell-item">
-                              <span class="label dotted">Size (USDT)</span>
+                              <span class="label dotted">{% trans "Size" %} (USDT)</span>
                               <span class="value">{{ position.size }}</span>
                           </div>
                           <div class="cell-item">
-                              <span class="label">Margin (USDT)</span>
+                              <span class="label">{% trans "Margin" %} (USDT)</span>
                               <span class="value">{{ position.margin }}</span>
                           </div>
                           <div class="cell-item">
@@ -168,7 +168,7 @@
                               <span class="value green">{{ position.margin_ratio }}%</span>
                           </div>
                           <div class="cell-item">
-                              <span class="label">Entry Price (USDT)</span>
+                              <span class="label">{% trans "Entry Price" %} (USDT)</span>
                               <span class="value">{{ position.entry_price }}</span>
                           </div>
                           <div class="cell-item">

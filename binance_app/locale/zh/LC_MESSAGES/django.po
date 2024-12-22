@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-21 01:27+0500\n"
+"POT-Creation-Date: 2024-12-23 03:07+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,11 +37,11 @@ msgstr "资金"
 msgid "Earn"
 msgstr "理财"
 
-#: .\templates\index.html:27 .\templates\index.html:201
+#: .\templates\index.html:27 .\templates\index.html:205
 msgid "Futures"
 msgstr "合约"
 
-#: .\templates\index.html:28
+#: .\templates\index.html:28 .\templates\index.html:163
 msgid "Margin"
 msgstr "杠杆"
 
@@ -70,14 +70,14 @@ msgid "Today's Realized PnL"
 msgstr "今日已实现盈亏"
 
 #: .\templates\index.html:96
-msgid "Wallet Balance (USDT)"
+msgid "Wallet Balance"
 msgstr "钱包余额"
 
-#: .\templates\index.html:101 .\templates\index.html:141
-msgid "Unrealized PNL (USDT)"
+#: .\templates\index.html:101
+msgid "Unrealized PNL"
 msgstr "未实现盈亏"
 
-#: .\templates\index.html:107 .\templates\index.html:197
+#: .\templates\index.html:107 .\templates\index.html:201
 msgid "Trade"
 msgstr "交易"
 
@@ -102,38 +102,50 @@ msgstr "持有仓位"
 msgid "Assets"
 msgstr "资产"
 
-#: .\templates\index.html:133
+#: .\templates\index.html:137
 msgid "Perp"
 msgstr "永续"
 
-#: .\templates\index.html:134
+#: .\templates\index.html:138
 msgid "Cross"
 msgstr "全仓"
 
-#: .\templates\index.html:147
+#: .\templates\index.html:145
+msgid "Unrealized PNL (USDT)"
+msgstr "未实现盈亏"
+
+#: .\templates\index.html:151
 msgid "ROI"
 msgstr "回报率"
 
-#: .\templates\index.html:163
+#: .\templates\index.html:159
+msgid "Size"
+msgstr "持仓数量"
+
+#: .\templates\index.html:167
 msgid "Margin Ratio"
 msgstr "保证金比率"
 
 #: .\templates\index.html:171
-msgid "Mark Price"
+msgid "Entry Price"
 msgstr "标记价格"
 
 #: .\templates\index.html:175
+msgid "Mark Price"
+msgstr "标记价格"
+
+#: .\templates\index.html:179
 msgid "Liq. Price"
 msgstr "强平价格"
 
-#: .\templates\index.html:189
+#: .\templates\index.html:193
 msgid "Home"
 msgstr "首页"
 
-#: .\templates\index.html:193
+#: .\templates\index.html:197
 msgid "Market"
 msgstr "行情"
 
-#: .\templates\index.html:205
+#: .\templates\index.html:209
 msgid "Wallet"
 msgstr "钱包"
