@@ -55,11 +55,11 @@ msgstr "期权"
 
 #: .\templates\index.html:36
 msgid "USDⓈ-M"
-msgstr ""
+msgstr "U本位"
 
 #: .\templates\index.html:37
 msgid "COIN-M"
-msgstr "U本位"
+msgstr "币本位"
 
 #: .\templates\index.html:41
 msgid "Margin Balance"
@@ -148,4 +148,4 @@ msgstr "行情"
 
 #: .\templates\index.html:209
 msgid "Wallet"
-msgstr "钱包"
+msgstr "资金"
