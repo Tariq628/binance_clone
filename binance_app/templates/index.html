@@ -143,7 +143,7 @@
                     <div class="grid-2">
                       <div class="cell-item">
                           <span style="color: #878e98;" class="label">{% trans "Unrealized PNL" %}(USDT)</span>
-                          <span class="value {% if position.unrealized_pnl > 0 %}green{% else %}red{% endif %}">
+                          <span  style="font-size:25px;" class="value {% if position.unrealized_pnl > 0 %}green{% else %}red{% endif %}">
                               {{ position.unrealized_pnl }}
                           </span>
                       </div>
@@ -157,7 +157,7 @@
                       <div class="grid-3">
                           <div class="cell-item">
                               <span class="label dotted">{% trans "Size" %} (USDT)</span>
-                              <span class="value">{{ position.size }}</span>
+                              <span  class="value">{{ position.size }}</span>
                           </div>
                           <div class="cell-item">
                               <span class="label">{% trans "Margin" %} (USDT)</span>
