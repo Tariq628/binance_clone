@@ -142,7 +142,7 @@
                   <div class="binance-card-content">
                     <div class="grid-2">
                       <div class="cell-item">
-                          <span style="color: #878e98;" class="label">{% trans "Unrealized PNL (USDT)" %}</span>
+                          <span style="color: #878e98;" class="label">{% trans "Unrealized PNL" %}(USDT)</span>
                           <span class="value {% if position.unrealized_pnl > 0 %}green{% else %}red{% endif %}">
                               {{ position.unrealized_pnl }}
                           </span>
@@ -177,7 +177,7 @@
                           </div>
                           <div class="cell-item">
                               <span class="label">{% trans "Liq. Price" %} (USDT)</span>
-                              <span class="value green">{{ position.liq_price }}</span>
+                              <span class="value">{{ position.liq_price }}</span>
                           </div>
                       </div>
                   </div>
